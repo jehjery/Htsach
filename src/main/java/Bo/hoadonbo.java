@@ -15,4 +15,7 @@ public class hoadonbo {
 		System.out.println(l.getNgaythanhtoan().toString());
 		hoadon.insert(l);
 	}
+	public void delete(hoadonbean a) {
+		hoadon.delete(a);
+	}
 }

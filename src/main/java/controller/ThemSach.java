@@ -46,7 +46,7 @@ public class ThemSach extends HttpServlet {
 		String tacgia=request.getParameter("tacgia");
 		String soluong=request.getParameter("soluong");
 		String gia=request.getParameter("gia");
-		String anh=request.getParameter("anh");
+		String anh=request.getParameter("Anh");
 	
 
 

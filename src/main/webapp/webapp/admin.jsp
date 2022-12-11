@@ -45,10 +45,10 @@
     </div>
     <ul class="nav navbar-nav ">
       
-      <li><a href="">Loại sách</a></li>
-      <li><a href="">Sách</a></li>
+      <li><a href="#">Loại sách</a></li>
+      <li><a href="KHOThanhToan">Sách</a></li>
       <li>
-      <a href="">Xác Nhận Hóa Đơn</a>
+      <a href="KHOThanhToan">Các Đơn Hàng</a>
       <i class="fa-solid fa-cart-shopping search__cart"></i>
       </li>
     </ul>

@@ -14,16 +14,16 @@ import bean.giohangbean;
 import bean.hoadonbean;
 
 /**
- * Servlet implementation class Xemchitiet
+ * Servlet implementation class XOAKHO
  */
-@WebServlet("/Xemchitiet")
-public class Xemchitiet extends HttpServlet {
+@WebServlet("/XOAKHO")
+public class XOAKHO extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Xemchitiet() {
+    public XOAKHO() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,31 +32,21 @@ public class Xemchitiet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-			
-			String ngay=request.getParameter("ngay");
-			hoadonbo hdo = new hoadonbo();
-			ArrayList<hoadonbean> listhd = hdo.findAll();
-			
-			request.setAttribute("dssachmua", null);
-			ArrayList<giohangbean> dssachmua= new ArrayList<>();
-			
-			for (hoadonbean a: listhd)
-			{	
-				if(ngay.equals(a.getNgaythanhtoan().toString())) 
-					{
-						dssachmua= a.getListsach();
-						request.setAttribute("dssachmua", dssachmua);
-					}
-				
-			}
-		
-			{
-			request.setAttribute("listhd", listhd);
-			request.getRequestDispatcher("Lichsumuahang.jsp").forward(request, response);
-			}
-		
-	}
+		// TODO Auto-generated method stub
+		String ngay=request.getParameter("ngay");
+		hoadonbo hdo = new hoadonbo();
+		ArrayList<hoadonbean> listhd = hdo.findAll();
+
+		for (hoadonbean a: listhd)
+		{	
+			if(ngay.equals(a.getNgaythanhtoan().toString())) 
+				{
+					hdo.delete(a);
+				}	
+		}
+		request.setAttribute("listhd", listhd);
+		request.getRequestDispatcher("KHOThanhToan").forward(request, response);
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

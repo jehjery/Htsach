@@ -61,7 +61,7 @@ public class SuaSach extends HttpServlet {
 				}
 		
 			}
-		RequestDispatcher rd1=request.getRequestDispatcher("SuaSach.jsp");
+		RequestDispatcher rd1=request.getRequestDispatcher("loai_admin");
 		rd1.forward(request, response);
 	}
 	

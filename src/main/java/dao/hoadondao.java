@@ -42,9 +42,9 @@ public class hoadondao {
 		return Collection.findOneAndUpdate(filters, doc);
 	}
 	
-	public Document delete(int stt) {
-		Bson filters = Filters.eq("stt", stt);		
-
-		return Collection.findOneAndDelete(filters);
+	public void delete(hoadonbean l) {
+		Gson gson = new Gson();
+		Document doc = Document.parse(gson.toJson(l));
+		Collection.deleteOne(doc);
 	}
 }

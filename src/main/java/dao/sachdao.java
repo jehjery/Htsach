@@ -71,9 +71,30 @@ public	ArrayList<sachbean> dssach= new ArrayList<sachbean>();
 			Bson filters = Filters.eq("masach", masach);		
 			return collection.findOneAndDelete(filters);
 		}
-		public void update(sachbean l) {
-			delete(l.getMasach());
-			insert(l);	
+//		public void update(sachbean l) {
+//			delete(l.getMasach());
+//			insert(l);	
+//		}
+		public Document update(sachbean l) {
+		
+			Bson filters = Filters.eq("masach", l.getMasach());		
+//			Gson gson = new Gson();
+//			Document doc = Document.parse(gson.toJson(l));
+			Bson updata= Updates.set("maloai", l.getMaloai());
+			Bson updata1= Updates.set("tensach", l.getMasach());
+			Bson updata2= Updates.set("tacgia", l.getTacgia());
+			Bson updata3= Updates.set("gia", l.getGia());
+			Bson updata4= Updates.set("Anh", l.getAnh());
+			Bson updata5= Updates.set("masach", l.getMaloai());
+			Bson updata6= Updates.set("soluong", l.getSoluong());
+			Document a= new Document();
+			a= collection.findOneAndUpdate(filters, updata);
+			a= collection.findOneAndUpdate(filters, updata1);
+			a= collection.findOneAndUpdate(filters, updata2);
+			a= collection.findOneAndUpdate(filters, updata3);
+			a= collection.findOneAndUpdate(filters, updata4);
+			System.out.println(a);
+			return a;
 		}
 	}
 

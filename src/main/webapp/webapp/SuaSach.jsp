@@ -52,6 +52,7 @@
 				
 				  <label for="usr">Mã loại:</label>
 				  <input 	value="<%=maloai %>" 
+				  
 				  name= "maloai" required="true" type="text" class="form-control" id="usr">
 				</div>
 				<div class="form-group">
